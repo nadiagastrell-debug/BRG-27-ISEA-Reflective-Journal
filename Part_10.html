@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Part 10: MySQL</title>
+</head>
+<body>
+	<h1>MySQL Database Server</h1>
+
+	<p> For my additional service, I chose MySQL because databases power most websites and applications.</p>
+	
+	<hr>
+	
+	<h2>Step 1: Install MySQL</h2>
+	<pre> sudo apt update
+	      sudo apt install mysql-server
+	      sudo mysql_secure_installation</pre>
+	      
+	<p> The secure installation wizard lets me set root passworkd, remove test accounts, and disable remote root login.<p>
+	
+	<img src="desktop/sudoaptinstallmysqlserver.png" alt="MySQL installation" width="700">
+	<img src="desktop/sudomysql_secure_installation.png" alt="MySQL Secure Installation Process" width="700">	
+
+	<hr>
+
+	<h2> Step 2: Login to MySQL</h2>
+	<pre>sudo mysql -u root -p</pre>
+	
+	<p>This logs me in as root user and prompts for a password.</p>
+	
+	<img src="desktop/sudomysql-uroot-p.png" alt="MySQL login" with="700">
+
+	<hr>
+
+	<h2>Step 3: Create Databases</h2>
+	<pre>CREATE DATABASE testdb;
+	     SHOW DATABASES;
+	     USE testdb;</pre>
+
+	<p>These commands create a database called testdb, list all databases and select testdb to work with.</p>
+
+	<img src="desktop/CREATEDATABASEStestdb;.ping" alt="Creating a databse in SQL" width="700">
+
+	<hr>
+
+	<h2>Step 4: Create Tables</h2>
+	<pre>CREATE TABLE users (
+	     id INT AUTO_INCREMENT PRIMARY KEY,
+	     username VARCHAR(50) NOT NULL,
+	     email VARCHAR(100) NOT NULL,
+	    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+ 	 );
+
+	    SHOW TABLES;
+	    DESCRIBE users;</pre>
+	
+	<p> This creates a users with auto-incrementing ID, username, email and timestamp columns.</p>
+
+	<img src="desktop/CREATETABLE.png" alt="Creating a users table" width="700">
+	<img src="desktop/CREATETABLE2.ping" alt="Creating a users table consecutive steps" width="700">
+
+	<hr>
+	
+	<h2>Step 5: Inserting Data</h2> 
+	<pre>INSERT INTO users (username, email) VALUES ('testuser', 'testuser@example.com');
+	     INSERT INTO users (username, email) VALUES ('john', 'john@example.com');
+     	     INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pre>
+
+	<p>Here I am adding three test users to the database to show how it works.</p>
+	
+	<img src="desktop/INSERTINTOusers.png" alt="Inserting data into the database" width="700">
+	
+	<hr>
+
+	<h2>Step 6: Querying Data</h2>
+	<pre>SELECT * FROM users;</pre>
+	
+	<p>This command shows all users in the database testdb with all columns.</p>
+ 
+	<img src="desktop/SELECT*FROMusers.png" alt="Viewing all users in the database testdb" width="700">
+
+	<h2> Step 7: Creating Application Users</h2>
+	<pre>CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'passworkd';
+	     GRANT ALL PRIVILEGES ON testdb.* TO 'appuser'@'localhost';
+	     FLUSH PRIVILEGES;
+	     SELECT user, host FROM mysql.user  WHERE user = 'appuser';</prE>
+
+	<p>This prompts create a dedicated user with limited permissions for security. Applications should never use the root account. The last line  will show only specific columns for a specified user.</p>
+ 
+	<img src="desktop/USERPRIVILEGES.png" alt="Creating new app users" width="700">
+
+	<h2>What I Learned</h2>
+	<p> MySQL stores organized data in tables. Every website that has users, posts or even products uses databases like this. The SQL commands (CREATE, INSERT, SELECT) are how applications talk to databases to save and retrieve information</p>
+	
+	<hr>
+	<p><a href="index.html:><-Back Home</a></p>
+</body>
+</html> 
+	

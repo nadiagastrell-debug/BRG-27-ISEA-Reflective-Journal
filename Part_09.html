@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Part 9: Backup Scripts</title>
+</head>
+<body>
+	<h1>Part 9: Automating Backups with Scripts</h1>
+	 
+	<p> This was one of the most satisfying labs because I actually got to create something that works. The goal was to write a bash script that automatically backs up files, names them with the current date, and runs on a schedule.</p>
+	
+	<p><em>I could not finish the cloud upload part using cp to copy backups to a remote server because I don't have a cloud server, but everything else worked perfectly.</em></p>
+	
+	<hr>
+
+	<h2>Step 1: Hello World Script</h2>
+	<p> First, I created a simple hello world script:</p>
+	<pre>nano hello.sh</pre>
+
+	<p>Inside the file I put:</p>
+	<pre>#b!/bin/bash
+	echo "Hello Bash World!"</pre>
+	
+	<p>Then I made it executable and ran it:</p>
+	<pre>chmod 777 hello.sh
+             ./hello.sh</pre>
+
+	<p>It then printed "Hello Bash World!" to the screen in the terminal</p>
+
+	<img src="desktop/nanohello.sh/display.png" alt="Hello world script output" width="700">
+	
+	<hr>
+
+	<h2>Step 2: Variables Script</h2>
+	<p>Next, I learned how to use variables:</p>
+	<pre>nano variables.sh</pre>
+
+	<p>Content:</p>
+	<pre>#!/bin/bash
+	     a="Hello bash using variables"
+	     echo $a</pre>
+
+	<p> The dollar sign ($) tells bash to use the value stored in variable 'a'.</p>
+	
+	<pre>chmod +x variables.sh
+	     ./variables.sh</pre>
+
+	<img src="desktop/variables.sh/display.png" alt="Variables script" width="700">
+
+	<hr>
+
+	<h2>Step 3: Basic Math Operations</h2>	
+	<p> I created a script to do calculations:</p>
+	<pre>nano maths.sh</pre>
+
+	<p>Content:</p>
+	<pre> #!/bin/bash
+	      a=10
+	      b=5
+	
+	      echo"Addition: $((a+b))"
+	      echo "Substraction: $((a-b))"
+	      echo "Multiplication: $((a*b))"
+	      echo "Division: $((a/b))"
+
+	<p>The double parentheses $((...)) tells bash to treat it as math.</p>
+
+	<pre>chmod +x maths.sh	
+	     ./maths.sh</pre>
+
+	<img src="desktop/math.sh/display.png" alt="Math operations" width="700">
+
+	<hr>
+
+	<h2>Step 4: Loop that Sums Numbers</h2>
+	<p> I modified a loop to add numbers from 0 to 9:</p>
+	<pre> nano loop.sh</pre>
+	
+	<p>Content:</p>
+	<pre>#!/bin/bash
+	     sum=0
+
+	     for ((i=0;i<10;i++));
+	     do
+	       sum=$((sum + i))
+	     done
+
+	     echo "Total sum is: $sum"</pre>
+
+	<p> This adds 0+1+2+3+4+5+6+7+8+9 = 45</p>
+
+	<pre>chmod +x sum.sh
+	     ./loop.sh</pre>
+
+	<img src="desktop/loops.sh/display.png" alt="Sum loop output" width="700>
+
+	<hr>
+	
+	<h2>Step 5: Setting up test files</h2>
+	<p>First I needed some files to practice backing up:</p>
+	<pre>mkdir ~/Documents/testfiles
+	     cd ~/Documents/testfiles
+	     touch file1 file2 file3 file4 file5
+
+	     mkdir subfolder
+	     cd subfolder
+	     touch file11 file22 file 33</pre>
+
+	<p> These commands create a folder with some empty test files and even a subfolder with more files. This mimics real documents that you'd want to backup regularly.</p>
+	
+	<img src="desktop/testfiles12345.png" alt="Test files and folders created" width="700">
+
+	<h2>Step 6: Writing the backup script</h2>
+	<p> Now I created the actual backup script with nano:</p>
+	<pre>cd ~
+	     nano testscript</pre>
+
+	<p>Content:</p>
+	<pre>#!/bin/nash
+	     
+	     #Get today's date 
+	     now=$(date +"%d_%m_%y")
+
+	     #Make sure backup actually folder exists
+	     mkdir -p ~/backup
+
+	     #Copy files from Documents to backup
+	     cp -R ~/Documents/* ~/backup/
+
+	     #Create dated zip file
+	     zip -r ~/${now}_backup.zip ~/backup/*
+
+	     echo "Backup created: ${now}_backup.zip"</pre>
+
+	<p>What each line does:</p>
+	<ul>
+	    <li><code>now=$(date +"%d_%m_%y")</code>: Creates a variable with today's date</li>
+	    <li><code>mkdir -p ~/backup</code>: Creates a backup folder that doesn't error if it already exits</li> 
+	    <li><code>cp -R ~/Documents* ~/backup/</code>: Copies all documents recursively </li>
+	    <li><code>zip -r ~/${now}_backup.zip ~/backup/*</code>: Creates a sip file that is dated</li>
+	</ul>
+
+	<pre>chmod +x testscript
+	     ./testscript</pre>
+
+	<img src="desktop/testscript.png" alt="Backup script created" width="700">
+	<img src="desktop/backup_created" alt="Backup script running" width="700">
+ 
+	<hr>
+
+	<h2>Step 7: Move Scripts to System-Wide Location</h2>
+	<p>To run the script from anywhere, I moved it to /usr/bin:</p>
+	<pre>sudo mv ~.testscript /usr/bin/backup_script
+	     sudo chown $USER /usr/bin/backup_script</pre>
+
+	<p>Now I can simply just type <code>backup_script</code> from any folder.</p>
+
+	<img src="desktop/movebackupscript.png" alt="MOving script to /usr/bin" width="700">
+
+	<hr>
+
+	<h2>Step 8: Schedule with Cron</h2>
+	<p>Finally, I schedules it to run automatically every hour:</p>
+	<pre>sudo nano /etc/crontab</pre>
+
+	<p>I added this line at the bottom:</p>
+	<pre>0 * * * * byteme /usr/bin/backup_script</pre>
+
+	<p>This means it will run at minute 0 of every hour, every day, as user byteme(me)</p>
+	
+	<img src="desktop/crontab.png" alt="Cron configuration" width="700">
+
+	<hr>
+
+	<h2>What I learned</h2>
+	<p>This lab taught me how automation actually works in Linux. System administrators write scripts once, then schedule them to run automatically forever. The date-based filenames mean I can keep backups from different days without overwriting old ones.</p>
+	
+	<hr>
+	<p><a href="index.html"><-Back Home</a></p>
+</body>
+</html>
