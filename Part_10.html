@@ -17,7 +17,7 @@ sudo mysql_secure_installation</pre>
 	      
 	<p> The secure installation wizard lets me set root passworkd, remove test accounts, and disable remote root login.<p>
 	
-	<img src="images/Part_10/sudo apt install myssql server.png" alt="MySQL installation" width="700">
+	<img src="images/Part_10/sudo%20apt%20install%20myssql%20server.png" alt="MySQL installation" width="700">
 	<img src="images/Part_10/sudo mysql_secure_installation.png" alt="MySQL Secure Installation Process" width="700">	
 
 	<hr>
@@ -27,7 +27,7 @@ sudo mysql_secure_installation</pre>
 	
 	<p>This logs me in as root user and prompts for a password.</p>
 	
-	<img src="images/Part_10/sudo mysql -u root -p.png" alt="MySQL login" with="700">
+	<img src="images/Part_10/sudo%20mysql%20-u%20root%20-p.png" alt="MySQL login" with="700">
 
 	<hr>
 
@@ -38,7 +38,7 @@ USE testdb;</pre>
 
 	<p>These commands create a database called testdb, list all databases and select testdb to work with.</p>
 
-	<img src="images/Part_10/CREATE DATABASES testdb.ping" alt="Creating a databse in SQL" width="700">
+	<img src="images/Part_10/CREATE%20DATABASES%20testdb.png" alt="Creating a databse in SQL" width="700">
 
 	<hr>
 
@@ -55,8 +55,8 @@ DESCRIBE users;</pre>
 	
 	<p> This creates a users with auto-incrementing ID, username, email and timestamp columns.</p>
 
-	<img src="images/Part_10/CREATE TABLE.png" alt="Creating a users table" width="700">
-	<img src="images/Part_10/CREATE TABLE 2.png" alt="Creating a users table consecutive steps" width="700">
+	<img src="images/Part_10/CREATE%20TABLE.png" alt="Creating a users table" width="700">
+	<img src="images/Part_10/CREATE%20TABLE%202.png" alt="Creating a users table consecutive steps" width="700">
 
 	<hr>
 	
@@ -67,7 +67,7 @@ INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pr
 
 	<p>Here I am adding three test users to the database to show how it works.</p>
 	
-	<img src="images/Part_10/INSERT INTO users.png" alt="Inserting data into the database" width="700">
+	<img src="images/Part_10/INSERT%20INTO%20users.png" alt="Inserting data into the database" width="700">
 	
 	<hr>
 
@@ -76,7 +76,7 @@ INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pr
 	
 	<p>This command shows all users in the database testdb with all columns.</p>
  
-	<img src="images/Part_10/SELECT * FROM users.png" alt="Viewing all users in the database testdb" width="700">
+	<img src="images/Part_10/SELECT%20*%20FROM%20users.png" alt="Viewing all users in the database testdb" width="700">
 
 	<h2> Step 7: Creating Application Users</h2>
 	<pre>CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'passworkd';
@@ -86,7 +86,7 @@ SELECT user, host FROM mysql.user  WHERE user = 'appuser';</prE>
 
 	<p>These prompts create a dedicated user with limited permissions for security. Applications should never use the root account. The last line  will show only specific columns for a specified user.</p>
  
-	<img src="images/Part_10/USER PRIVILEGES.png" alt="Creating new app users" width="700">
+	<img src="images/Part_10/USER%20PRIVILEGES.png" alt="Creating new app users" width="700">
 
 	<h2>What I Learned</h2>
 	<p> MySQL stores organized data in tables. Every website that has users, posts or even products uses databases like this. The SQL commands (CREATE, INSERT, SELECT) are how applications talk to databases to save and retrieve information.</p>
