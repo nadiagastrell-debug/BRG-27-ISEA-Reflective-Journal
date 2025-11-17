@@ -9,7 +9,7 @@ This repository contains my lab documentation from the DNS part onwards for our 
 #View the documentation
 
 Visit the GitHub Pages site to see the full HTML documentation:
-[View Labs](https://nadiagastrell-debug.github.io/BRG-27-ISEA-Reflective Journal/)
+[View Labs](https://nadiagastrell-debug.github.io/BRG-27-ISEA-Reflective-Journal/)
 
 #Contents
 - Part 7: DNS Configuration
