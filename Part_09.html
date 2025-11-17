@@ -26,7 +26,7 @@ echo "Hello Bash World!"</pre>
 
 	<p>It then printed "Hello Bash World!" to the screen in the terminal</p>
 
-	<img src="desktop/nanohello.sh/display.png" alt="Hello world script output" width="700">
+	<img src="images/Part_09/nano hello.sh:display.png" alt="Hello world script output" width="700">
 	
 	<hr>
 
@@ -44,7 +44,7 @@ echo $a</pre>
 	<pre>chmod +x variables.sh
 ./variables.sh</pre>
 
-	<img src="desktop/variables.sh/display.png" alt="Variables script" width="700">
+	<img src="images/Part_09/variables.sh:display.png" alt="Variables script" width="700">
 
 	<hr>
 
@@ -67,7 +67,7 @@ echo "Division: $((a/b))"
 	<pre>chmod +x maths.sh	
 ./maths.sh</pre>
 
-	<img src="desktop/math.sh/display.png" alt="Math operations" width="700">
+	<img src="images/Part_09/math.sh:display.png" alt="Math operations" width="700">
 
 	<hr>
 
@@ -91,7 +91,7 @@ echo "Total sum is: $sum"</pre>
 	<pre>chmod +x sum.sh
 ./loop.sh</pre>
 
-	<img src="desktop/loops.sh/display.png" alt="Sum loop output" width="700>
+	<img src="images/Part_09/loops.sh:display.png" alt="Sum loop output" width="700>
 
 	<hr>
 	
@@ -107,7 +107,7 @@ touch file11 file22 file 33</pre>
 
 	<p> These commands create a folder with some empty test files and even a subfolder with more files. This mimics real documents that you'd want to backup regularly.</p>
 	
-	<img src="desktop/testfiles12345.png" alt="Test files and folders created" width="700">
+	<img src="images/Part_09/testfiles12345.png" alt="Test files and folders created" width="700">
 
 	<h2>Step 6: Writing the backup script</h2>
 	<p> Now I created the actual backup script with nano:</p>
@@ -142,8 +142,8 @@ echo "Backup created: ${now}_backup.zip"</pre>
 	<pre>chmod +x testscript
 ./testscript</pre>
 
-	<img src="desktop/testscript.png" alt="Backup script created" width="700">
-	<img src="desktop/backup_created" alt="Backup script running" width="700">
+	<img src="images/Part_09/testscript.png" alt="Backup script created" width="700">
+	<img src="images/Part_09/backup_created.png" alt="Backup script running" width="700">
  
 	<hr>
 
@@ -154,7 +154,7 @@ sudo chown $USER /usr/bin/backup_script</pre>
 
 	<p>Now I can simply just type <code>backup_script</code> from any folder.</p>
 
-	<img src="desktop/movebackupscript.png" alt="MOving script to /usr/bin" width="700">
+	<img src="images/Part_09/movebackupscript.png" alt="MOving script to /usr/bin" width="700">
 
 	<hr>
 
@@ -167,7 +167,7 @@ sudo chown $USER /usr/bin/backup_script</pre>
 
 	<p>This means it will run at minute 0 of every hour, every day, as user byteme(me)</p>
 	
-	<img src="desktop/crontab.png" alt="Cron configuration" width="700">
+	<img src="images/Part_09/crontab.png" alt="Cron configuration" width="700">
 
 	<hr>
 
