@@ -12,8 +12,8 @@
 	
 	<h2>Step 1: Install MySQL</h2>
 	<pre> sudo apt update
-	      sudo apt install mysql-server
-	      sudo mysql_secure_installation</pre>
+sudo apt install mysql-server
+sudo mysql_secure_installation</pre>
 	      
 	<p> The secure installation wizard lets me set root passworkd, remove test accounts, and disable remote root login.<p>
 	
@@ -33,8 +33,8 @@
 
 	<h2>Step 3: Create Databases</h2>
 	<pre>CREATE DATABASE testdb;
-	     SHOW DATABASES;
-	     USE testdb;</pre>
+SHOW DATABASES;
+USE testdb;</pre>
 
 	<p>These commands create a database called testdb, list all databases and select testdb to work with.</p>
 
@@ -44,14 +44,14 @@
 
 	<h2>Step 4: Create Tables</h2>
 	<pre>CREATE TABLE users (
-	     id INT AUTO_INCREMENT PRIMARY KEY,
-	     username VARCHAR(50) NOT NULL,
-	     email VARCHAR(100) NOT NULL,
-	    created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+id INT AUTO_INCREMENT PRIMARY KEY,
+username VARCHAR(50) NOT NULL,
+email VARCHAR(100) NOT NULL,
+created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
  	 );
 
-	    SHOW TABLES;
-	    DESCRIBE users;</pre>
+SHOW TABLES;
+DESCRIBE users;</pre>
 	
 	<p> This creates a users with auto-incrementing ID, username, email and timestamp columns.</p>
 
@@ -62,8 +62,8 @@
 	
 	<h2>Step 5: Inserting Data</h2> 
 	<pre>INSERT INTO users (username, email) VALUES ('testuser', 'testuser@example.com');
-	     INSERT INTO users (username, email) VALUES ('john', 'john@example.com');
-         INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pre>
+INSERT INTO users (username, email) VALUES ('john', 'john@example.com');
+INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pre>
 
 	<p>Here I am adding three test users to the database to show how it works.</p>
 	
@@ -80,9 +80,9 @@
 
 	<h2> Step 7: Creating Application Users</h2>
 	<pre>CREATE USER 'appuser'@'localhost' IDENTIFIED BY 'passworkd';
-	     GRANT ALL PRIVILEGES ON testdb.* TO 'appuser'@'localhost';
-	     FLUSH PRIVILEGES;
-	     SELECT user, host FROM mysql.user  WHERE user = 'appuser';</prE>
+GRANT ALL PRIVILEGES ON testdb.* TO 'appuser'@'localhost';
+FLUSH PRIVILEGES;
+SELECT user, host FROM mysql.user  WHERE user = 'appuser';</prE>
 
 	<p>These prompts create a dedicated user with limited permissions for security. Applications should never use the root account. The last line  will show only specific columns for a specified user.</p>
  
