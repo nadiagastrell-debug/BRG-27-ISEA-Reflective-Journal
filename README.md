@@ -1,6 +1,6 @@
 #BRG-ISEA- Lab Documentation
 
-***Student:** Nadia Fainstein DaY Gastrell
+***Student:** Nadia Fainstein Day Gastrell
 **Student ID:** 35920195
 **Additional Service:** My SQL Database
 
