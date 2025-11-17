@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Part 8: HTTPS Certificates</title>
+	<title>Part 8: HTTPS Certificates.</title>
 </head>
 <body>
 	<h1>Part 8: Getting Free HTTPS Certificates</h1>
@@ -9,27 +9,27 @@
 	<p><strong>I could not complete this part either</strong> beacuse it needed the same things as the DNS lab, a public server and omain name with DNS already working.</p>
 	<hr>
 
-	<h2>What this lab was about:<h2>
+	<h2>What this lab was about:</h2>
 	<p>This lab would have taught me how to get a free SSL/TLS certificate from Let's Encrypt to enable HTTPS on my website. You know how some websites show a padlock icon and say "Secure" in the address bar? That's what this certificate does.</p>
 
-	<h2> The steps I would have followed</h2>
+	<h2>The steps I would have followed</h2>
 
-	<h3> First, I install Certbot:</h3>
+	<h3>First, I install Certbot:</h3>
 	<pre>sudo apt install certbot python3-certbot-apache</pre>
 	<p>Certbot is a clever tool that automates the entire process of getting and installing certificates.</p>
 
-	<h3> Then run Certbot:</h3>
+	<h3>Then run Certbot:</h3>
 	<pre>sudo certbot --apache</pre>
 	<p>This single command automatically:</p>
 	<ul>
-	     <li>Looks at your Apache configuration to find your domain name<li>
-	     <li>Contact Let's Encrypt servers over the internet</li>
-	     <li>Let's Encrypt will ask you to prove you actually own this domain</li>
-	     <li>Certbot puts a special verification file on your web server</li>
-	     <li>Let's Encrypt tries to download that file from your domain</li>
-	     <li> If it works, Let's Encrypt gives you a free certificate</li>
-	     <li>Certbot installs it and configures Apache to use HTTPS</li>
-	     <li>It even sets up automatic renewal since certificates expire after 90 days</li>
+	     <li>Looks at your Apache configuration to find your domain name.<li>
+	     <li>Contact Let's Encrypt servers over the internet.</li>
+	     <li>Let's Encrypt will ask you to prove you actually own this domain.</li>
+	     <li>Certbot puts a special verification file on your web server.</li>
+	     <li>Let's Encrypt tries to download that file from your domain.</li>
+	     <li> If it works, Let's Encrypt gives you a free certificate.</li>
+	     <li>Certbot installs it and configures Apache to use HTTPS.</li>
+	     <li>It even sets up automatic renewal since certificates expire after 90 days.</li>
 	</ul>
 
 	<h2>Why HTTPS matters</h2>
@@ -39,10 +39,10 @@
 	<p><strong>Trust:</strong> Nowadays, browsers show warnings for websites without HTTPS. Users have learned to look for that padlock icon before entering any sensitive information.</p>
 	
 	<img src="desktop/certbotwebsite.png" alt="Certbot website" width="700">
-	<p><em>The Certbot website has clear instructions for different setups</em></p>
+	<p><em>The Certbot website has clear instructions for different setups.</em></p>
 
-	<h2>What I learned from this<h2>
-	<p>Even though I could not complete the practical work, I now understand why evevry modern website uses HTTPS. It'snot optional anymore, it protects users and builds more trust.</p>
+	<h2>What I learned from this</h2>
+	<p>Even though I could not complete the practical work, I now understand why every modern website uses HTTPS. It shouldn't not optional anymore, it protects users and builds more trust.</p>
 	
 	<hr>
 	<p><a href="index.html"><-Back Home</a></p>
