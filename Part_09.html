@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title> Part 9: Backup Scripts</title>
+	<title> Part 9: Backup Scripts.</title>
 </head>
 <body>
 	<h1>Part 9: Automating Backups with Scripts</h1>
@@ -133,10 +133,10 @@
 
 	<p>What each line does:</p>
 	<ul>
-	    <li><code>now=$(date +"%d_%m_%y")</code>: Creates a variable with today's date</li>
-	    <li><code>mkdir -p ~/backup</code>: Creates a backup folder that doesn't error if it already exits</li> 
-	    <li><code>cp -R ~/Documents* ~/backup/</code>: Copies all documents recursively </li>
-	    <li><code>zip -r ~/${now}_backup.zip ~/backup/*</code>: Creates a sip file that is dated</li>
+	    <li><code>now=$(date +"%d_%m_%y")</code>: Creates a variable with today's date.</li>
+	    <li><code>mkdir -p ~/backup</code>: Creates a backup folder that doesn't error if it already exits.</li> 
+	    <li><code>cp -R ~/Documents* ~/backup/</code>: Copies all documents recursively.</li>
+	    <li><code>zip -r ~/${now}_backup.zip ~/backup/*</code>: Creates a sip file that is dated.</li>
 	</ul>
 
 	<pre>chmod +x testscript
@@ -159,7 +159,7 @@
 	<hr>
 
 	<h2>Step 8: Schedule with Cron</h2>
-	<p>Finally, I schedules it to run automatically every hour:</p>
+	<p>Finally, I scheduled it to run automatically every hour:</p>
 	<pre>sudo nano /etc/crontab</pre>
 
 	<p>I added this line at the bottom:</p>

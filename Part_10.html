@@ -63,7 +63,7 @@
 	<h2>Step 5: Inserting Data</h2> 
 	<pre>INSERT INTO users (username, email) VALUES ('testuser', 'testuser@example.com');
 	     INSERT INTO users (username, email) VALUES ('john', 'john@example.com');
-     	     INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pre>
+         INSERT INTO users (username, email) VALUES ('alice', 'alice'@'example.com');</pre>
 
 	<p>Here I am adding three test users to the database to show how it works.</p>
 	
@@ -84,12 +84,12 @@
 	     FLUSH PRIVILEGES;
 	     SELECT user, host FROM mysql.user  WHERE user = 'appuser';</prE>
 
-	<p>This prompts create a dedicated user with limited permissions for security. Applications should never use the root account. The last line  will show only specific columns for a specified user.</p>
+	<p>These prompts create a dedicated user with limited permissions for security. Applications should never use the root account. The last line  will show only specific columns for a specified user.</p>
  
 	<img src="desktop/USERPRIVILEGES.png" alt="Creating new app users" width="700">
 
 	<h2>What I Learned</h2>
-	<p> MySQL stores organized data in tables. Every website that has users, posts or even products uses databases like this. The SQL commands (CREATE, INSERT, SELECT) are how applications talk to databases to save and retrieve information</p>
+	<p> MySQL stores organized data in tables. Every website that has users, posts or even products uses databases like this. The SQL commands (CREATE, INSERT, SELECT) are how applications talk to databases to save and retrieve information.</p>
 	
 	<hr>
 	<p><a href="index.html:><-Back Home</a></p>

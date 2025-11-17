@@ -1,14 +1,14 @@
 <!DOCTYPE html>
 <html>
 <head>
-	<title>Part 7: DNS Configuration</title>
+	<title>Part 7: DNS Configuration.</title>
 </head>
 <body>
-	<p><strong> I was not able to complete this Lab</strong> because it needed a public cloud server and a registered domain name, which I did not have access to</p>
+	<p><strong> I was not able to complete this Lab</strong> because it needed a public cloud server and a registered domain name, which I did not have access to.</p>
 
 	<hr>
 
-	<h1> What I needed to complete this</h1>
+	<h1> What I needed to complete this.</h1>
 	<p> The lab required three thing I did not have:</p>
 	<ul>
 	     <li>A could server running somehwre on the internet with a public IP address</li>
@@ -21,7 +21,7 @@
 	
 	<h3> The different types of DNS records:</h3>
 	<ul>
-	     <li><strong>A record:</strong> This pointd yout domain name to an IPv4 address, which is the most common type.</li>
+	     <li><strong>A record:</strong> This points your domain name to an IPv4 address, which is the most common type.</li>
 	     <li><strong>AAA Record:</strong> Same thing but for IPv6 addresses; the newer, longer format.</li>
 	     <li><strong>CNAME:</strong> Creates an alias, like making "www.example.com" point to "www.example.com"</li>
 	     <li><strong>MX:</strong> Tells emails where to go for your domain</li>
@@ -33,16 +33,16 @@
 	<p>This command asks DNS servers what the IP address for google.com is, and they provide you with the answer.</p>
 
 	<img src="desktop/nslookupgoogle.com.png" alt="ns lookup command showing Google's IP address" width="700"> 
-	<p><em>Here is what happened when I looked uo google.com</em></p>
+	<p><em>Here is what happened when I looked up google.com</em></p>
 
 	<h2> How it would have worked</h2>
 	<p> If I'd had a domain and server, I would have:</p>
 	<ol>
-	     <li>Logged into my domain registrar's website</li>
-	     <li>Found the DNS management section</li>
-	     <li>Created an A record pointing my domain to my server's IP address</li>
+	     <li>Logged into my domain registrar's website.</li>
+	     <li>Found the DNS management section.</li>
+	     <li>Created an A record pointing my domain to my server's IP address.</li>
 	     <li>Waited a few hours for the changes to spread accross the internet through DNS propagation.</li>
-	     <li>Typed my domain name into a browser and seen my Apache web server appear</li>
+	     <li>Typed my domain name into a browser and seen my Apache web server appear.</li>
 	</ol>
 
 	<p> The whole point is that after setting this up, anyone in the world could type my domain name and reach my server. That is how literally every website on the internet works.</p>
